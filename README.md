@@ -176,3 +176,8 @@ For technical support or questions about the app, please contact the development
 ---
 
 **Remember**: Your clients' confidentiality and your professional wellbeing are paramount. This app is designed to support both.
+
+
+## 📚 Resources
+
+See curated videos and links for Cursor, Git, and GitHub in [docs/RESOURCES.md](docs/RESOURCES.md).
