@@ -1,0 +1,14 @@
+# This file tells Netlify how to deploy your app
+# You don't need to change anything here!
+
+[build]
+  # No build command needed - we're using plain HTML/CSS/JS
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Security headers
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer-when-downgrade"

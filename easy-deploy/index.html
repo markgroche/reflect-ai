@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Reflect - Journal & AI Chat</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Make it installable on phones -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6B46C1">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Login Screen -->
+        <div id="login-screen" class="screen active">
+            <div class="login-content">
+                <i class="fas fa-book-medical logo"></i>
+                <h1>Reflect</h1>
+                <p>Your Private Journal & AI Assistant</p>
+
+                <div class="login-form">
+                    <h3>Enter PIN to Continue</h3>
+                    <div class="pin-display">
+                        <span class="pin-dot" id="pin1"></span>
+                        <span class="pin-dot" id="pin2"></span>
+                        <span class="pin-dot" id="pin3"></span>
+                        <span class="pin-dot" id="pin4"></span>
+                    </div>
+                    <div class="pin-input-hidden">
+                        <input type="password" id="pin-input" maxlength="4" inputmode="numeric"
+                            placeholder="Enter 4-digit PIN">
+                    </div>
+                    <p class="hint">Demo PIN: 1234</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main App -->
+        <div id="main-app" class="screen">
+            <!-- Header -->
+            <div class="header">
+                <h2 id="screen-title">My Journal</h2>
+                <button class="menu-btn" onclick="toggleMenu()">
+                    <i class="fas fa-ellipsis-v"></i>
+                </button>
+            </div>
+
+            <!-- Journal List View -->
+            <div id="journal-view" class="view active">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search entries..." id="search-input">
+                </div>
+
+                <div class="entries-list" id="entries-list">
+                    <!-- Entries will be added here by JavaScript -->
+                </div>
+
+                <button class="fab" onclick="showNewEntry()">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+
+            <!-- AI Chat View -->
+            <div id="chat-view" class="view">
+                <div class="chat-container">
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="message ai-message">
+                            <div class="message-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                <p>Hello! I'm here to help you reflect on your day or discuss anything on your mind.
+                                    What would you like to talk about?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-container">
+                        <input type="text" id="chat-input" placeholder="Type your message...">
+                        <button onclick="sendMessage()" class="send-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings View -->
+            <div id="settings-view" class="view">
+                <div class="settings-content">
+                    <div class="settings-section">
+                        <h3>Security</h3>
+                        <div class="setting-item">
+                            <span>Change PIN</span>
+                            <button onclick="alert('PIN change feature coming soon!')">Change</button>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>Data</h3>
+                        <div class="setting-item">
+                            <span>Export Journal</span>
+                            <button onclick="exportData()">Export</button>
+                        </div>
+                        <div class="setting-item">
+                            <span>Clear All Data</span>
+                            <button onclick="clearData()" class="danger-btn">Clear</button>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>About</h3>
+                        <p class="about-text">
+                            Reflect is a private journaling app with AI assistance.
+                            All data is stored locally in your browser.
+                            Version 1.0 (Web)
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <div class="bottom-nav">
+                <button class="nav-item active" onclick="showView('journal')">
+                    <i class="fas fa-book"></i>
+                    <span>Journal</span>
+                </button>
+                <button class="nav-item" onclick="showView('chat')">
+                    <i class="fas fa-comments"></i>
+                    <span>AI Chat</span>
+                </button>
+                <button class="nav-item" onclick="showView('settings')">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- New Entry Modal -->
+        <div id="new-entry-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>New Journal Entry</h3>
+                    <button onclick="closeNewEntry()" class="close-btn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" id="entry-title" placeholder="Give your entry a title...">
+                    </div>
+                    <div class="form-group">
+                        <label>How are you feeling?</label>
+                        <div class="mood-selector">
+                            <button class="mood-btn" data-mood="😊">😊</button>
+                            <button class="mood-btn" data-mood="😐">😐</button>
+                            <button class="mood-btn" data-mood="😔">😔</button>
+                            <button class="mood-btn" data-mood="😡">😡</button>
+                            <button class="mood-btn" data-mood="😴">😴</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Your thoughts</label>
+                        <textarea id="entry-content" rows="8"
+                            placeholder="Write about your day, thoughts, or feelings..."></textarea>
+                    </div>
+                    <button onclick="saveEntry()" class="save-btn">Save Entry</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Dropdown -->
+        <div id="menu-dropdown" class="menu-dropdown">
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

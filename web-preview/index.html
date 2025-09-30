@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflect App - Visual Preview</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="preview-container">
+        <h1>Reflect - AI-Powered Journaling App</h1>
+        <p class="subtitle">Visual Preview of React Native App Screens</p>
+
+        <div class="screens-container">
+            <!-- Splash Screen -->
+            <div class="phone-frame">
+                <div class="screen splash-screen">
+                    <div class="splash-content">
+                        <i class="fas fa-book-medical logo"></i>
+                        <h2>Reflect</h2>
+                        <p>Secure Journaling for Therapists</p>
+                        <div class="loading-spinner"></div>
+                    </div>
+                </div>
+                <p class="screen-label">Splash Screen</p>
+            </div>
+
+            <!-- Auth Screen -->
+            <div class="phone-frame">
+                <div class="screen auth-screen">
+                    <div class="auth-content">
+                        <i class="fas fa-lock auth-icon"></i>
+                        <h3>Welcome Back</h3>
+                        <p>Enter your PIN to continue</p>
+                        <div class="pin-inputs">
+                            <div class="pin-dot filled"></div>
+                            <div class="pin-dot filled"></div>
+                            <div class="pin-dot"></div>
+                            <div class="pin-dot"></div>
+                        </div>
+                        <div class="keypad">
+                            <div class="key">1</div>
+                            <div class="key">2</div>
+                            <div class="key">3</div>
+                            <div class="key">4</div>
+                            <div class="key">5</div>
+                            <div class="key">6</div>
+                            <div class="key">7</div>
+                            <div class="key">8</div>
+                            <div class="key">9</div>
+                            <div class="key biometric"><i class="fas fa-fingerprint"></i></div>
+                            <div class="key">0</div>
+                            <div class="key"><i class="fas fa-backspace"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="screen-label">Authentication Screen</p>
+            </div>
+
+            <!-- Journal List Screen -->
+            <div class="phone-frame">
+                <div class="screen journal-screen">
+                    <div class="header">
+                        <h3>Session Notes</h3>
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search entries...">
+                    </div>
+                    <div class="journal-list">
+                        <div class="journal-entry">
+                            <div class="entry-header">
+                                <span class="client-id">Client: JD-001</span>
+                                <span class="date">Sep 29, 2025</span>
+                            </div>
+                            <p class="session-preview">Discussed anxiety management techniques and progress with CBT
+                                exercises...</p>
+                            <div class="tags">
+                                <span class="tag">Anxiety</span>
+                                <span class="tag">CBT</span>
+                                <span class="tag">Progress</span>
+                            </div>
+                        </div>
+                        <div class="journal-entry">
+                            <div class="entry-header">
+                                <span class="client-id">Client: MS-003</span>
+                                <span class="date">Sep 28, 2025</span>
+                            </div>
+                            <p class="session-preview">Family dynamics exploration, identified communication patterns...
+                            </p>
+                            <div class="tags">
+                                <span class="tag">Family</span>
+                                <span class="tag">Communication</span>
+                            </div>
+                        </div>
+                        <div class="journal-entry">
+                            <div class="entry-header">
+                                <span class="client-id">Client: RK-002</span>
+                                <span class="date">Sep 27, 2025</span>
+                            </div>
+                            <p class="session-preview">Trauma processing session, EMDR technique applied...</p>
+                            <div class="tags">
+                                <span class="tag">Trauma</span>
+                                <span class="tag">EMDR</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fab">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="tab-bar">
+                        <div class="tab active">
+                            <i class="fas fa-book"></i>
+                            <span>Journal</span>
+                        </div>
+                        <div class="tab">
+                            <i class="fas fa-brain"></i>
+                            <span>Insights</span>
+                        </div>
+                        <div class="tab">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="screen-label">Journal List Screen</p>
+            </div>
+
+            <!-- AI Conversation Screen -->
+            <div class="phone-frame">
+                <div class="screen conversation-screen">
+                    <div class="header with-back">
+                        <i class="fas fa-arrow-left"></i>
+                        <h3>AI Reflection</h3>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <div class="chat-container">
+                        <div class="chat-messages">
+                            <div class="message ai-message">
+                                <div class="message-avatar">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="message-content">
+                                    <p>Hello! I'm here to help you reflect on your session with client JD-001. How did
+                                        today's session go?</p>
+                                </div>
+                            </div>
+                            <div class="message user-message">
+                                <div class="message-content">
+                                    <p>The session went well overall. We made progress on anxiety management, but I
+                                        noticed some resistance when we discussed family dynamics.</p>
+                                </div>
+                            </div>
+                            <div class="message ai-message">
+                                <div class="message-avatar">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="message-content">
+                                    <p>That's interesting. Resistance around family topics can be quite significant.
+                                        What form did this resistance take? Was it verbal deflection, body language
+                                        changes, or something else?</p>
+                                </div>
+                            </div>
+                            <div class="message user-message">
+                                <div class="message-content">
+                                    <p>Mainly deflection - they kept redirecting to work stress. Also noticed closed
+                                        body language when I gently tried to explore the connection.</p>
+                                </div>
+                            </div>
+                            <div class="message ai-message typing">
+                                <div class="message-avatar">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="message-content">
+                                    <div class="typing-indicator">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" placeholder="Type your reflection...">
+                            <button class="send-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <p class="screen-label">AI Conversation Screen</p>
+            </div>
+
+            <!-- New Entry Screen -->
+            <div class="phone-frame">
+                <div class="screen new-entry-screen">
+                    <div class="header with-back">
+                        <i class="fas fa-arrow-left"></i>
+                        <h3>New Session Note</h3>
+                        <button class="save-btn">Save</button>
+                    </div>
+                    <div class="entry-form">
+                        <div class="form-group">
+                            <label>Client Identifier</label>
+                            <input type="text" placeholder="Enter client ID or initials">
+                        </div>
+                        <div class="form-group">
+                            <label>Session Date</label>
+                            <div class="date-picker">
+                                <span>Monday, September 29, 2025</span>
+                                <i class="fas fa-calendar"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Session Notes</label>
+                            <textarea placeholder="Enter session notes..."
+                                rows="8">Client presented with continued anxiety about work situation. We explored cognitive distortions and practiced grounding techniques. Notable progress in identifying automatic thoughts.</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Tags</label>
+                            <div class="tag-input">
+                                <span class="tag">Anxiety</span>
+                                <span class="tag">Work Stress</span>
+                                <input type="text" placeholder="Add tag...">
+                            </div>
+                        </div>
+                        <div class="ai-insights">
+                            <h4><i class="fas fa-sparkles"></i> AI Insights</h4>
+                            <div class="insight-card">
+                                <p>Consider exploring the connection between work anxiety and perfectionism patterns
+                                    noted in previous sessions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="screen-label">New Entry Screen</p>
+            </div>
+        </div>
+
+        <div class="features">
+            <h2>Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure & Encrypted</h3>
+                    <p>All data is encrypted locally on device</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-fingerprint"></i>
+                    <h3>Biometric Auth</h3>
+                    <p>PIN and biometric authentication</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI-Powered Insights</h3>
+                    <p>On-device LLM for session analysis</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Offline First</h3>
+                    <p>Works completely offline</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

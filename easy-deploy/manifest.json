@@ -1,0 +1,16 @@
+{
+    "name": "Reflect - Journal & AI Chat",
+    "short_name": "Reflect",
+    "description": "Your private journal with AI assistant",
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#6B46C1",
+    "background_color": "#ffffff",
+    "icons": [
+        {
+            "src": "icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

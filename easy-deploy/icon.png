@@ -1,0 +1,7 @@
+# Icon Placeholder
+To add an icon:
+1. Create or find a 512x512 pixel PNG image
+2. Name it "icon.png" 
+3. Replace this file with your image
+
+The icon will appear when users save the app to their home screen.
